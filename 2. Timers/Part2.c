@@ -36,10 +36,10 @@ void gpioInit(){
     P6OUT &= ~BIT6; // reset P6.6 green LED
     P6DIR |= BIT6; // set P6.6 to output
 
-    P2DIR |= ~BIT3; // set P2.3 to input
+    P2DIR &= ~BIT3; // set P2.3 to input
     P2REN |= BIT3; // enable P2.3 resistor
     P2OUT |= BIT3; // set P2.3 resistor to pull-up
-    P2IES &= ~BIT3; // P2.3 Low -> High edge
+    P2IES |= BIT3; // P2.3 High -> Low edge
     P2IE |= BIT3; // P2.3 interrupt enabled
 
 }
